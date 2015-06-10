@@ -873,7 +873,7 @@ abstract class Ardent extends Model {
         if (static::$throwOnFind && $debug[1]['function'] != 'findOrFail') {
             return self::findOrFail($id, $columns);
         } else {
-            return parent::find($id, $columns);
+            return static::query()->find($id, $columns);
         }
     }
 
